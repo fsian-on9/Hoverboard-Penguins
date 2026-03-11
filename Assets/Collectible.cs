@@ -14,10 +14,10 @@ public class Collectible : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.Instance.AddCollectible();
-            // if (AudioManager.Instance != null && AudioManager.Instance.collectibleSFX != null)
-            // {
-            //     AudioManager.Instance.PlaySFX(AudioManager.Instance.collectibleSFX);
-            // }
+            if (AudioManager.Instance != null && AudioManager.Instance.collectibleSFX != null)
+            {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.collectibleSFX);
+            }
             Destroy(gameObject);
         }
     }
