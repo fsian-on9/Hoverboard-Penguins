@@ -1,21 +1,16 @@
 using UnityEngine;
 
-public class Audio : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static Audio Instance {get; private set;}
+    public static AudioManager Instance {get; private set;}
 
     [Header("Audio Sources")]
-
     public AudioSource musicSource;
-
     public AudioSource sfxSource;
 
     [Header("AudioClips")]
-
     public AudioClip backgroundMusic;
-
     public AudioClip jumpSFX;
-
     public AudioClip collectibleSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
