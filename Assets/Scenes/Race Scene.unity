@@ -451,6 +451,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpForce: 12
+  groundCheck: {fileID: 0}
+  groundCheckDistance: 0.12
+  groundCheckOffset: {x: 0, y: -0.5}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &1232521012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -540,7 +546,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3203343717865218302, guid: 9fcbdd5bd5499f44598ab31b41dab642, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -561,7 +567,7 @@ Transform:
   m_GameObject: {fileID: 1232521009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.99, y: 0.15, z: 0.029095767}
+  m_LocalPosition: {x: -9.71, y: 0.18, z: 0.029095767}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
