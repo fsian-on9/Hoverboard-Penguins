@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 9fcbdd5bd5499f44598ab31b41dab642
+guid: a8e175ca83044f845969757bbd465908
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7904492415890539497
-    second: Hoverboard Penguins Sprite Sheet-Sheet_0
+      213: -4398555772679432245
+    second: Hoverboard Penguins Sprite Sheet_0
   - first:
-      213: 3203343717865218302
-    second: Hoverboard Penguins Sprite Sheet-Sheet_1
+      213: 7182032110988036766
+    second: Hoverboard Penguins Sprite Sheet_1
   - first:
-      213: 6031620267244380496
-    second: Hoverboard Penguins Sprite Sheet-Sheet_2
+      213: -6135125348722417448
+    second: Hoverboard Penguins Sprite Sheet_2
   - first:
-      213: -1056974275018634461
-    second: Hoverboard Penguins Sprite Sheet-Sheet_3
+      213: -438433374291182423
+    second: Hoverboard Penguins Sprite Sheet_3
   - first:
-      213: -6882063092786583984
-    second: Hoverboard Penguins Sprite Sheet-Sheet_4
+      213: -8133091494031309533
+    second: Hoverboard Penguins Sprite Sheet_4
   - first:
-      213: 7759284324506364745
-    second: Hoverboard Penguins Sprite Sheet-Sheet_5
+      213: 2030895455304872777
+    second: Hoverboard Penguins Sprite Sheet_5
   - first:
-      213: -2618623364655484459
-    second: Hoverboard Penguins Sprite Sheet-Sheet_6
+      213: -5039471180544681230
+    second: Hoverboard Penguins Sprite Sheet_6
+  - first:
+      213: 3380103508152635728
+    second: Hoverboard Penguins Sprite Sheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,10 +69,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 31
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_0
+      name: Hoverboard Penguins Sprite Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,21 +129,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e3cce2f8f562bd60800000000000000
-      internalID: 7904492415890539497
+      spriteID: bc7d2bc44d035f2c0800000000000000
+      internalID: -4398555772679432245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_1
+      name: Hoverboard Penguins Sprite Sheet_1
       rect:
         serializedVersion: 2
         x: 35
@@ -148,21 +151,21 @@ TextureImporter:
         width: 23
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef0e5dca320947c20800000000000000
-      internalID: 3203343717865218302
+      spriteID: e9a04e42724bba360800000000000000
+      internalID: 7182032110988036766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_2
+      name: Hoverboard Penguins Sprite Sheet_2
       rect:
         serializedVersion: 2
         x: 70
@@ -170,21 +173,21 @@ TextureImporter:
         width: 20
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 051e5291dae94b350800000000000000
-      internalID: 6031620267244380496
+      spriteID: 8d0e7e82008abdaa0800000000000000
+      internalID: -6135125348722417448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_3
+      name: Hoverboard Penguins Sprite Sheet_3
       rect:
         serializedVersion: 2
         x: 100
@@ -192,21 +195,21 @@ TextureImporter:
         width: 22
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32bc9c83f7fd451f0800000000000000
-      internalID: -1056974275018634461
+      spriteID: 9acb2b34b2f5ae9f0800000000000000
+      internalID: -438433374291182423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_4
+      name: Hoverboard Penguins Sprite Sheet_4
       rect:
         serializedVersion: 2
         x: 131
@@ -214,21 +217,21 @@ TextureImporter:
         width: 25
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05621a074100e70a0800000000000000
-      internalID: -6882063092786583984
+      spriteID: 325438c8064712f80800000000000000
+      internalID: -8133091494031309533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_5
+      name: Hoverboard Penguins Sprite Sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -236,21 +239,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94b65719bf38eab60800000000000000
-      internalID: 7759284324506364745
+      spriteID: 943f66d08a03f2c10800000000000000
+      internalID: 2030895455304872777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hoverboard Penguins Sprite Sheet-Sheet_6
+      name: Hoverboard Penguins Sprite Sheet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -258,15 +261,37 @@ TextureImporter:
         width: 32
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d1fb258ce7c8abd0800000000000000
-      internalID: -2618623364655484459
+      spriteID: 2fad0db59a3301ab0800000000000000
+      internalID: -5039471180544681230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hoverboard Penguins Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0515d7b6b3a88ee20800000000000000
+      internalID: 3380103508152635728
       vertices: []
       indices: 
       edges: []
@@ -275,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0716749b2a284ac438a4b4c1576a77ad
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hoverboard Penguins Sprite Sheet-Sheet_0: 7904492415890539497
-      Hoverboard Penguins Sprite Sheet-Sheet_1: 3203343717865218302
-      Hoverboard Penguins Sprite Sheet-Sheet_2: 6031620267244380496
-      Hoverboard Penguins Sprite Sheet-Sheet_3: -1056974275018634461
-      Hoverboard Penguins Sprite Sheet-Sheet_4: -6882063092786583984
-      Hoverboard Penguins Sprite Sheet-Sheet_5: 7759284324506364745
-      Hoverboard Penguins Sprite Sheet-Sheet_6: -2618623364655484459
+      Hoverboard Penguins Sprite Sheet_0: -4398555772679432245
+      Hoverboard Penguins Sprite Sheet_1: 7182032110988036766
+      Hoverboard Penguins Sprite Sheet_2: -6135125348722417448
+      Hoverboard Penguins Sprite Sheet_3: -438433374291182423
+      Hoverboard Penguins Sprite Sheet_4: -8133091494031309533
+      Hoverboard Penguins Sprite Sheet_5: 2030895455304872777
+      Hoverboard Penguins Sprite Sheet_6: -5039471180544681230
+      Hoverboard Penguins Sprite Sheet_7: 3380103508152635728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
