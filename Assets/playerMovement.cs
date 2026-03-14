@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 12f;
     public Transform groundCheck;
     public float groundCheckDistance = 0.12f;
-    public Vector2 groundCheckOffset = new Vector2(0f, -0.5f);
+    public Vector3 groundCheckOffset = new Vector3(0f, -0.5f);
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private float horizInput;
+    private float moveHorizontal;
+    private float moveVertical;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -23,33 +24,34 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizInput = Input.GetAxisRaw("Horizontal");
+        moveHorizontal = Input.GetAxisRaw("Horizontal");
+        moveVertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 rayOrigin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position + groundCheckOffset;
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
+        Vector3 rayOrigin = groundCheck != null ? (Vector3)groundCheck.position : (Vector3)transform.position + groundCheckOffset;
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector3.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector3(moveHorizontal, moveVertical, jumpForce) * speed;
         }
 
         if (spriteRenderer != null)
         {
-            if (horizInput > 0.1f) spriteRenderer.flipX = false;
-            else if (horizInput < -0.1f) spriteRenderer.flipX = true;
+            if (moveVertical > 0.1f) spriteRenderer.flipX = false;
+            else if (moveVertical < -0.1f) spriteRenderer.flipX = true;
         }
 
         if (animator != null)
         {
-            animator.SetFloat("moveInput", Mathf.Abs(horizInput));
+            animator.SetFloat("moveInput", Mathf.Abs(moveHorizontal));
             animator.SetBool("isGrounded", isGrounded);
         }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizInput * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector3(moveVertical, moveHorizontal * speed, rb.linearVelocity.y);
     }
 
     void OnDrawGizmosSelected()
