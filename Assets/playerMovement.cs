@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(moveVertical, moveHorizontal * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector3(moveVertical * speed, moveHorizontal * speed, rb.linearVelocity.y);
     }
 
     void OnDrawGizmosSelected()
