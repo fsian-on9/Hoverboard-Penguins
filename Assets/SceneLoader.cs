@@ -25,7 +25,7 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1f;   // ensure unpaused when changing scenes
         isPaused = false;
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(1);
     }
 
     public void ReloadScene()
