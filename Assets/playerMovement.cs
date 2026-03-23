@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-        moveVertical = 1;
+        moveHorizontal = 1;
+        moveVertical = Input.GetAxisRaw("Horizontal");
 
         Vector3 rayOrigin = groundCheck != null ? (Vector3)groundCheck.position : (Vector3)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector3.down, groundCheckDistance, groundLayer);
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(moveVertical * speed, moveHorizontal * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector3(moveHorizontal * speed, moveVertical * speed, rb.linearVelocity.y);
     }
 
     void OnDrawGizmosSelected()
