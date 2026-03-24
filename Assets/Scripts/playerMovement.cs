@@ -11,14 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private float moveHorizontal;
-    private float moveVertical;
+    private bool moveVertical;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-
-    public Transform topTrack;
-    public Transform bottomTrack;
-    public Transform middleTrack;
+    public enum Track {TopTrack, MiddleTrack, BottomTrack}
+    public Track m_Track = Track.TopTrack;
+    private float NewYPos;
+    private float YValue;
 
     void Start()
     {
@@ -29,7 +29,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveHorizontal = 1;
-        moveVertical = Input.GetAxisRaw("Vertical");
+        moveVertical = Input.GetButtonDown("Vertical");
+
+        if (moveVertical)
+        {
+            if (m_Track == Track.MiddleTrack)
+            {
+                NewYPos = 0;
+            }
+            else if (m_Track == Track.TopTrack)
+            {
+                NewYPos = YValue;
+            }
+            else if (m_Track == Track.BottomTrack)
+            {
+                NewYPos = -YValue;
+            }
+        }
 
         Debug.Log(moveVertical);
 
