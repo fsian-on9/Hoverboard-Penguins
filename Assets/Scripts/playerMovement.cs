@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    public Transform topTrack;
+    public Transform bottomTrack;
+    public Transform middleTrack;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,33 +29,38 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveHorizontal = 1;
-        moveVertical = Input.GetAxisRaw("Horizontal");
+        moveVertical = Input.GetAxisRaw("Vertical");
+
+        Debug.Log(moveVertical);
 
         Vector3 rayOrigin = groundCheck != null ? (Vector3)groundCheck.position : (Vector3)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector3.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rb.linearVelocity = new Vector3(moveHorizontal, moveVertical, jumpForce) * speed;
-        }
-
-        if (spriteRenderer != null)
-        {
-            if (moveVertical > 0.1f) spriteRenderer.flipX = false;
-            else if (moveVertical < -0.1f) spriteRenderer.flipX = true;
-        }
 
         if (animator != null)
         {
             animator.SetFloat("moveInput", Mathf.Abs(moveHorizontal));
             animator.SetBool("isGrounded", isGrounded);
         }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+        
+        // if (moveVertical == 1)
+        // {
+        //     this.transform.position.y = transform.position.y + 10;
+        // }
+        // else if (moveVertical == -1)
+        // {
+        //     this.transform.position.y = transform.position.y - 10;
+        // }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(moveHorizontal * speed, moveVertical * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector3(moveHorizontal * speed, 0, rb.linearVelocity.x);
     }
 
     void OnDrawGizmosSelected()

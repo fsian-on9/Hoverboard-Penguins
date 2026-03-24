@@ -39,11 +39,14 @@ public class SceneLoader : MonoBehaviour
     public void TogglePause()
     {
         if (isPaused)
+        {
             ResumeGame();
+        }
         else
+        {
             PauseGame();
+        }
     }
-
     public void PauseGame()
     {
         Time.timeScale = 0f;
