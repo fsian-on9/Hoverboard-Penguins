@@ -1073,9 +1073,9 @@ MonoBehaviour:
   - {fileID: 4301815959791327835, guid: e9b87bdfb4883d94b9b97f230ba32bb0, type: 3}
   obstacleSpawnTime: 2
   obstacleSpeed: 6
-  spawnMin: 0.5
-  spawnMax: 1
-  regularSpawn: 1
+  spawnMin: 1
+  spawnMax: 5
+  regularSpawn: 0
 --- !u!4 &750533261
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,9 +1125,9 @@ MonoBehaviour:
   - {fileID: 7713717961175287254, guid: 0f9fd553b06394b40bd20d6360a6c7d0, type: 3}
   - {fileID: 4301815959791327835, guid: e9b87bdfb4883d94b9b97f230ba32bb0, type: 3}
   obstacleSpawnTime: 2
-  obstacleSpeed: 7
-  spawnMin: 5
-  spawnMax: 1
+  obstacleSpeed: 6
+  spawnMin: 1
+  spawnMax: 5
   regularSpawn: 0
 --- !u!4 &955887025
 Transform:
@@ -1404,9 +1404,9 @@ MonoBehaviour:
   - {fileID: 7713717961175287254, guid: 0f9fd553b06394b40bd20d6360a6c7d0, type: 3}
   - {fileID: 4301815959791327835, guid: e9b87bdfb4883d94b9b97f230ba32bb0, type: 3}
   obstacleSpawnTime: 2
-  obstacleSpeed: 9
-  spawnMin: 0.5
-  spawnMax: 1
+  obstacleSpeed: 6
+  spawnMin: 1
+  spawnMax: 5
   regularSpawn: 0
 --- !u!4 &1206716133
 Transform:
