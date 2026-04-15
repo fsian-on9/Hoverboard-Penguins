@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public int collectibleCount = 0;
     public TMP_Text collectibleText;
+    [SerializeField] private GameObject pauseMenu;
+    private bool isPaused;
 
     private void Awake()
     {
@@ -18,7 +20,38 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         collectibleText.text = $"Collectibles: {collectibleCount}";
+        pauseMenu.SetActive(false);
+        isPaused = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        {
+            PauseGame();
+            Debug.Log("ESCAPE PRESSED");
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        {
+            ResumeGame();
+            Debug.Log("ESCAPE PRESSED");
+        }
+    }
+
+    void PauseGame()
+    {
+        isPaused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void AddCollectible()

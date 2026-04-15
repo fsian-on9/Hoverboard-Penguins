@@ -31,7 +31,7 @@ public class GridMovement : MonoBehaviour {
 
   // Update is called once per frame
   private void Update() {
-    moveHorizontal = 1;
+    moveHorizontal = 0;
     // Only process on move at a time.
     if (!isMoving) {
       // Accomodate two different types of moving.
@@ -55,7 +55,7 @@ public class GridMovement : MonoBehaviour {
 
   void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(moveHorizontal * speed, 0, rb.linearVelocity.x);
+        rb.linearVelocity = new Vector3(0, 0, rb.linearVelocity.x);
     }
 
 
