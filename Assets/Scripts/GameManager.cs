@@ -4,10 +4,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public int collectibleCount = 0;
-    public TMP_Text collectibleText;
+
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
+
+    private float trackSpeed = 5;
+
+    [Header("Track Objects")]
+    [SerializeField] private GameObject track1;
+    [SerializeField] private GameObject track2;
+    [SerializeField] private GameObject track3;
+
+    Rigidbody2D track1RB;
+    Rigidbody2D track2RB;
+    Rigidbody2D track3RB;
 
     private void Awake()
     {
@@ -21,9 +31,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        collectibleText.text = $"Collectibles: {collectibleCount}";
         pauseMenu.SetActive(false);
         isPaused = false;
+
+        track1RB = track1.GetComponent<Rigidbody2D>();
+        track2RB = track2.GetComponent<Rigidbody2D>();
+        track3RB = track3.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -31,13 +44,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             PauseGame();
-            Debug.Log("ESCAPE PRESSED");
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             ResumeGame();
-            Debug.Log("ESCAPE PRESSED");
         }
+
+        track1RB.linearVelocity = Vector2.left * trackSpeed;
+        track2RB.linearVelocity = Vector2.left * trackSpeed;
+        track3RB.linearVelocity = Vector2.left * trackSpeed;
     }
 
     void PauseGame()
@@ -52,19 +67,5 @@ public class GameManager : MonoBehaviour
         isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    public void AddCollectible()
-    {
-        collectibleCount++;
-        UpdateCollectibleUI();
-    }
-
-    private void UpdateCollectibleUI()
-    {
-        if (collectibleText != null)
-        {
-            collectibleText.text = $"Collectibles: {collectibleCount}";
-        }
     }
 }
