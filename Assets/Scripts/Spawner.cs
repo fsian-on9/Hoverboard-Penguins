@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     private void Awake() {
         // this sets a a randome spawntime for the 1st time
         obstacleSpawnTime = Random.Range(spawnMin, spawnMax);
-        Debug.Log($"Spawn time: {obstacleSpawnTime}");
+        // Debug.Log($"Spawn time: {obstacleSpawnTime}");
     }
     private void Update()
     {
@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
             if (regularSpawn == false) {
             // this sets a a randome spawntime for the 1st time
                 obstacleSpawnTime = Random.Range(spawnMin, spawnMax);
-                Debug.Log($"Spawn time: {obstacleSpawnTime}");
+                // Debug.Log($"Spawn time: {obstacleSpawnTime}");
             }
         }
     }
@@ -48,6 +48,6 @@ public class Spawner : MonoBehaviour
 
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
         obstacleRB.linearVelocity = Vector2.left * obstacleSpeed;
-        Debug.Log($"Rock Spawned");
+        // Debug.Log($"Rock Spawned");
     }
 }

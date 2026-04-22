@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
 
-    private float trackSpeed = 5;
+    private float trackSpeed = 10;
 
     [Header("Track Objects")]
     [SerializeField] private GameObject track1;

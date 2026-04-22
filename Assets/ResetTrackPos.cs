@@ -6,10 +6,14 @@ public class ResetTrackPos : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Transform trackPos = other.GetComponent<Transform>();
+        Vector3 pos = transform.position;
+        pos.x = 115.9f;
+
         if(other.CompareTag("Track"))
         {
-            Transform trackPos = other.GetComponent<Transform>();
-            trackPos.position.x = trackRef.position.x;
+            trackPos.position = pos;
+
         }
     }
 }
