@@ -68,4 +68,11 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    public bool isPlaying = false;
+
+    public void GameOver()
+    {
+        isPlaying = false;
+    }
 }

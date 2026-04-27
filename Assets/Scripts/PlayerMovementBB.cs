@@ -21,6 +21,7 @@ public class GridMovement : MonoBehaviour {
   private Animator animator;
   private float moveHorizontal;
   private float vertical_pos = 1;
+  public GameObject player;
 
   void Start()
     {
@@ -108,5 +109,21 @@ public class GridMovement : MonoBehaviour {
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(transform.position + (Vector3)groundCheckOffset, transform.position + (Vector3)groundCheckOffset + Vector3.down * groundCheckDistance);
         }
+    }
+
+    public bool isPlaying = false;
+
+    public void GameOver()
+    {
+        isPlaying = false;
+    }
+
+    private void OnCollision2D(Collision2D other)
+    {
+      if(other.transform.tag == "Obstacle")
+      {
+        Destroy(player);
+        GameManager.Instance.GameOver();
+      }
     }
 }
