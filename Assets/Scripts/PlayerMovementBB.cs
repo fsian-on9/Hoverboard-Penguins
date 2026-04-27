@@ -20,6 +20,7 @@ public class GridMovement : MonoBehaviour {
   private SpriteRenderer spriteRenderer;
   private Animator animator;
   private float moveHorizontal;
+  private float vertical_pos = 1;
 
   void Start()
     {
@@ -45,10 +46,12 @@ public class GridMovement : MonoBehaviour {
       }
 
       // If the input function is active, move in the appropriate direction.
-      if (inputFunction(KeyCode.UpArrow)) {
+      if (inputFunction(KeyCode.UpArrow) && vertical_pos < 2 ) {
         StartCoroutine(Move(Vector2.up));
-      } else if (inputFunction(KeyCode.DownArrow)) {
+        vertical_pos ++;
+      } else if (inputFunction(KeyCode.DownArrow) && vertical_pos > 0) {
         StartCoroutine(Move(Vector2.down));
+        vertical_pos --;
       }
     }
   }
