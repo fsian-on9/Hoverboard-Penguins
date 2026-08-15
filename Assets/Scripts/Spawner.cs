@@ -19,8 +19,11 @@ public class Spawner : MonoBehaviour
         // Debug.Log($"Spawn time: {obstacleSpawnTime}");
     }
     private void Update()
-    {
+    {   
+        if (GameManager.Instance.isPlaying)
+        {
         SpawnLoop();
+        }
     }
 
     private void SpawnLoop()
@@ -43,6 +46,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+        
 
         GameObject spawnedObstacle =  Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
 

@@ -16,10 +16,14 @@ public class SpikeTrap : MonoBehaviour
             damageable.ApplyDamage(damage);
         }
 
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            print("die 2");
             Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(0);
+            print(currentScene);
+            Time.timeScale = 1f;
+            GameManager.Instance.isPlaying = false;
+            SceneManager.LoadScene("main menu");
         }
     }
 }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
-
+    public bool isPlaying = true;
     private float trackSpeed = 10;
 
     [Header("Track Objects")]
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
         pauseMenu.SetActive(false);
         isPaused = false;
-
+        isPlaying = true;
         track1RB = track1.GetComponent<Rigidbody2D>();
         track2RB = track2.GetComponent<Rigidbody2D>();
         track3RB = track3.GetComponent<Rigidbody2D>();
@@ -41,18 +41,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (isPlaying == true)
         {
-            PauseGame();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
-        {
-            ResumeGame();
-        }
+            if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+            {
+                PauseGame();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+            {
+                ResumeGame();
+            }
 
-        track1RB.linearVelocity = Vector2.left * trackSpeed;
-        track2RB.linearVelocity = Vector2.left * trackSpeed;
-        track3RB.linearVelocity = Vector2.left * trackSpeed;
+            track1RB.linearVelocity = Vector2.left * trackSpeed;
+            track2RB.linearVelocity = Vector2.left * trackSpeed;
+            track3RB.linearVelocity = Vector2.left * trackSpeed;
+        }
     }
 
     void PauseGame()
@@ -68,8 +71,6 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
-
-    public bool isPlaying = false;
 
     public void GameOver()
     {

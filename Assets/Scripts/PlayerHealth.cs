@@ -71,5 +71,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     void Die()
     {
         gameObject.SetActive(false);
+        print("die");
     }
 }

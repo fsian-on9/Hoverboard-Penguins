@@ -9,6 +9,9 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {
+        print("awake");
+        Time.timeScale = 1f;
+        print("poophole");
         if (Instance == null)
         {
             Instance = this;
@@ -23,9 +26,12 @@ public class SceneLoader : MonoBehaviour
     // ---------- SCENE LOADING ----------
     public void LoadScene(string sceneName)
     {
+        print("loadscene");
+        print(sceneName);
         Time.timeScale = 1f;   // ensure unpaused when changing scenes
         isPaused = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Race Scene");
+        // SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadScene()

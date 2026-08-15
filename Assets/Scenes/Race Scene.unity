@@ -7295,6 +7295,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   player: {fileID: 0}
+  isPlaying: 0
 --- !u!114 &1232521018
 MonoBehaviour:
   m_ObjectHideFlags: 0
