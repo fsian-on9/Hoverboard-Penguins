@@ -18,9 +18,8 @@ public class SpikeTrap : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            print("die 2");
+            // print("die 2");
             Scene currentScene = SceneManager.GetActiveScene();
-            print(currentScene);
             Time.timeScale = 1f;
             GameManager.Instance.isPlaying = false;
             SceneManager.LoadScene("main menu");
