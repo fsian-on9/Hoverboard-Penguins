@@ -1352,10 +1352,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 792646850}
+  isPlaying: 0
   track1: {fileID: 118887192}
   track2: {fileID: 870394287}
   track3: {fileID: 559077062}
-  isPlaying: 0
 --- !u!4 &761717856
 Transform:
   m_ObjectHideFlags: 0

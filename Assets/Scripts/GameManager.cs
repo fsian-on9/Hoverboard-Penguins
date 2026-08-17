@@ -37,8 +37,9 @@ public class GameManager : MonoBehaviour
         track1RB = track1.GetComponent<Rigidbody2D>();
         track2RB = track2.GetComponent<Rigidbody2D>();
         track3RB = track3.GetComponent<Rigidbody2D>();
+        print("fuck me hard");
     }
-
+    
     void Update()
     {
         if (isPlaying == true)
@@ -55,6 +56,18 @@ public class GameManager : MonoBehaviour
             track1RB.linearVelocity = Vector2.left * trackSpeed;
             track2RB.linearVelocity = Vector2.left * trackSpeed;
             track3RB.linearVelocity = Vector2.left * trackSpeed;
+            print("race tracks baby");
+        }
+    }
+
+    public void LoadScene()
+    {
+        if (isPlaying == true)
+        {
+            track1RB.linearVelocity = Vector2.left * trackSpeed;
+            track2RB.linearVelocity = Vector2.left * trackSpeed;
+            track3RB.linearVelocity = Vector2.left * trackSpeed;
+            print("jack's mum");
         }
     }
 
@@ -63,6 +76,7 @@ public class GameManager : MonoBehaviour
         isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        print("pause");
     }
 
     public void ResumeGame()
@@ -75,5 +89,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isPlaying = false;
+        print("pickles");
     }
 }
