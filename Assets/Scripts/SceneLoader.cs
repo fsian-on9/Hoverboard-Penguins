@@ -7,21 +7,20 @@ public class SceneLoader : MonoBehaviour
 
     private bool isPaused = false;
 
-    // private void Awake()
-    // {
-    //     print("awake");
-    //     Time.timeScale = 1f;
-    //     print("poophole");
-    //     if (Instance == null)
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        print("poophole");
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
+    }
 
     // ---------- SCENE LOADING ----------
     public void LoadScene(string sceneName)
