@@ -4,11 +4,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    AudioManager audioManager;
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
     public bool isPlaying = true;
     private float trackSpeed = 10;
+    private float elapsedtime = 100;
 
     [Header("Track Objects")]
     [SerializeField] private GameObject track1;
@@ -31,13 +32,16 @@ public class GameManager : MonoBehaviour
         track1RB = track1.GetComponent<Rigidbody2D>();
         track2RB = track2.GetComponent<Rigidbody2D>();
         track3RB = track3.GetComponent<Rigidbody2D>();
-        print("fuck me hard");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager.PlayMusic();
     }
     
     void Update()
     {
+        
         if (isPlaying == true)
-        {
+        {   
+            elapsedtime += Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
             {
                 PauseGame();
@@ -50,8 +54,18 @@ public class GameManager : MonoBehaviour
             track1RB.linearVelocity = Vector2.left * trackSpeed;
             track2RB.linearVelocity = Vector2.left * trackSpeed;
             track3RB.linearVelocity = Vector2.left * trackSpeed;
+            
             print("race tracks baby");
+            if(elapsedtime >= 120)
+            {
+            EndGame();
+            }
         }
+        else
+        {
+            audioManager.StopMusic();
+        }
+        
     }
 
     public void LoadScene()
@@ -84,5 +98,11 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
         print("pickles");
+    }
+
+    public void EndGame()
+    {
+        isPlaying = false;
+        SceneLoader.LoadScene("End Scene");
     }
 }

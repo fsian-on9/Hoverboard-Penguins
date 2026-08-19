@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    private bool isPaused = false;
+    private static bool isPaused = false;
 
     private void Awake()
     {
@@ -23,13 +23,13 @@ public class SceneLoader : MonoBehaviour
     }
 
     // ---------- SCENE LOADING ----------
-    public void LoadScene(string sceneName)
+    public static void LoadScene(string sceneName)
     {
         print("loadscene");
         print(sceneName);
         Time.timeScale = 1f;   // ensure unpaused when changing scenes
         isPaused = false;
-        SceneManager.LoadScene("Race Scene");
+        SceneManager.LoadScene(sceneName);
         // SceneManager.LoadScene(sceneName);
     }
 
@@ -62,6 +62,11 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void OptionsMenu()
+    {
+        
     }
 
     // ---------- QUIT ----------

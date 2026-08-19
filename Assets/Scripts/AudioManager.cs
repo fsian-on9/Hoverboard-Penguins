@@ -10,30 +10,15 @@ public class AudioManager : MonoBehaviour
 
     [Header("AudioClips")]
     public AudioClip backgroundMusic;
-    public AudioClip jumpSFX;
-    public AudioClip collectibleSFX;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioClip UpSFX;
+    public AudioClip DownSFX;
+    public AudioClip DeathSFX;
     void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    // Update is called once per frame
-    private void Start()
-    {
-        if (backgroundMusic != null && musicSource != null)
-        {
-            musicSource.clip = backgroundMusic;
-            musicSource.loop = true;
-            musicSource.Play();
         }
     }
 
@@ -45,13 +30,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(AudioClip clip)
+    public void PlayMusic()
     {
-        if(clip != null && musicSource != null)
-        {
-            musicSource.clip = clip;
-            musicSource.loop = true;
-            musicSource.Play();
-        }
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        musicSource.loop = false;
+        musicSource.Stop();
     }
 }

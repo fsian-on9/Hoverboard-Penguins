@@ -22,7 +22,12 @@ public class GridMovement : MonoBehaviour {
   private float moveHorizontal;
   private float vertical_pos = 1;
   public GameObject player;
+  AudioManager audioManager;
 
+void Awake()
+  {
+    audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+  }
   void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,9 +55,11 @@ public class GridMovement : MonoBehaviour {
       if (inputFunction(KeyCode.UpArrow) && vertical_pos < 2 ) {
         StartCoroutine(Move(Vector2.up));
         vertical_pos ++;
+        audioManager.PlaySFX(audioManager.UpSFX);
       } else if (inputFunction(KeyCode.DownArrow) && vertical_pos > 0) {
         StartCoroutine(Move(Vector2.down));
         vertical_pos --;
+        audioManager.PlaySFX(audioManager.DownSFX);
       }
     }
   }

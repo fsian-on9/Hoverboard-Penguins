@@ -6,7 +6,7 @@ using TMPro;
 public class timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    float elapsedTime;
+    public float elapsedTime;
     void Update()
     {
         elapsedTime += Time.deltaTime;
