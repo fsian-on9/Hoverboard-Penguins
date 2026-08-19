@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private bool isPaused;
     public bool isPlaying = true;
     private float trackSpeed = 10;
-    private float elapsedtime = 100;
+    private float elapsedtime;
 
     [Header("Track Objects")]
     [SerializeField] private GameObject track1;
@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
             track2RB.linearVelocity = Vector2.left * trackSpeed;
             track3RB.linearVelocity = Vector2.left * trackSpeed;
             
-            print("race tracks baby");
             if(elapsedtime >= 120)
             {
             EndGame();
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
             track1RB.linearVelocity = Vector2.left * trackSpeed;
             track2RB.linearVelocity = Vector2.left * trackSpeed;
             track3RB.linearVelocity = Vector2.left * trackSpeed;
-            print("jack's mum");
         }
     }
 
@@ -84,7 +82,6 @@ public class GameManager : MonoBehaviour
         isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        print("pause");
     }
 
     public void ResumeGame()
@@ -97,7 +94,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isPlaying = false;
-        print("pickles");
     }
 
     public void EndGame()

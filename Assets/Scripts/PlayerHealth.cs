@@ -65,12 +65,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
 
         sprite.enabled =
-            Mathf.FloorToInt(blinkTimer / blinkInterval) % 2 == 0;
+            Mathf.FloorToInt(blinkTimer / blinkInterval) % 12 == 0;
     }
 
     void Die()
     {
         gameObject.SetActive(false);
-        print("die");
     }
 }
